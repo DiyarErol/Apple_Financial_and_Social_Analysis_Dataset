@@ -1,37 +1,7 @@
-{
-  "title": "Apple Stock Prediction - Feature-Engineered Financial Dataset",
-  "id": "yourusername/apple-financial-social-analysis",
-  "licenses": [
-    {
-      "name": "CC-BY-SA-4.0"
-    }
-  ],
-  "subtitle": "Comprehensive AAPL dataset with 80+ features: technical indicators, competitors, macro, social trends",
-  "description": "# Apple Financial and Social Analysis Dataset\n\n## Overview\nComprehensive financial dataset for Apple Inc. (AAPL) stock analysis with 80+ engineered features spanning technical indicators, competitor data, macroeconomic variables, and social sentiment.\n\n## Key Features\n- **2,696 daily samples** from 2015-03-13 to 2025-11-28\n- **80 feature columns** including:\n  - Technical indicators (RSI, MACD, Bollinger Bands, ATR)\n  - Competitor stocks (AMZN, MSFT, GOOGL, META)\n  - Macroeconomic data (Fed rate, CPI, USD index, treasuries)\n  - Social/search trends (Google Trends for Apple products)\n  - Lagged returns and momentum features\n\n## Model Performance\n- **RMSE**: 1.93% (walk-forward validation)\n- **Ensemble Sharpe**: 1.10 (LightGBM + XGBoost)\n- **R²**: -0.30 (challenging prediction task)\n\n## Contents\n- `data/apple_feature_enhanced.csv` - Main dataset\n- `reports/` - Analysis results (PDF, CSV)\n- `figures/` - Visualization plots\n- `docs/` - Feature descriptions and README\n\n## Use Cases\n- Stock price prediction and trading strategies\n- Time series forecasting with multiple data sources\n- Feature engineering and selection studies\n- Ensemble modeling and walk-forward validation\n- SHAP explainability analysis\n\n## Citation\nIf you use this dataset, please cite:\n```\nApple Financial and Social Analysis Dataset (2025)\nKaggle Dataset\n```\n",
-  "keywords": [
-    "finance",
-    "stocks",
-    "time series",
-    "machine learning",
-    "feature engineering",
-    "technical analysis",
-    "apple",
-    "stock prediction",
-    "trading",
-    "ensemble modeling"
-  ],
-  "resources": [
-    {
-      "path": "data/apple_feature_enhanced.csv",
-      "description": "Main feature-engineered dataset with 80+ columns"
-    },
-    {
-      "path": "reports/final_report.pdf",
-      "description": "Comprehensive analysis report"
-    },
-    {
-      "path": "reports/shap_importance.csv",
-      "description": "SHAP feature importance rankings"
-    }
-  ]
+﻿{
+  "title": "Apple Stock Prediction",
+  "id": "diyarerol21/apple-stock-prediction",
+  "licenses": [{"name": "CC-BY-SA-4.0"}],
+  "subtitle": "80+ features for AAPL",
+  "description": "Financial dataset for Apple stock prediction with 2696 samples and 80+ engineered features"
 }
