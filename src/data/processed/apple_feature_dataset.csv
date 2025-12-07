@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 date,close,high,low,open,volume,apple iphone,macbook,fed_rate,us_cpi,usd_index,macro_sentiment_index,daily_return,volatility_7d,ma7,ma30,trend_delta,macro_delta,next_day_close
 2015-02-13,28.28376579284668,28.32827843655033,27.96549546602483,28.32827843655033,217088800,22.0,68.0,0.11,235.342,104.8452,0.0589968320920548,0.004902927789937151,0.010443871172060016,27.3130555834089,25.362194442749022,-46.0,104.7352,28.4506893157959

@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 fold,train_start,train_end,test_start,test_end,train_size,test_size,rmse,mae,r2,sharpe
 1,2015-03-13,2016-03-02,2016-03-03,2017-02-21,245.0,245.0,1.6438515253299277,1.218012239442698,-0.6899630773438019,1.74919069900744

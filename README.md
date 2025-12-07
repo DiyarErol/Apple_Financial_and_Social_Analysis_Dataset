@@ -1,3 +1,6 @@
+Author: Diyar Erol
+GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
+
 # Apple Financial and Social Analysis Dataset
 
 ## Overview
@@ -91,10 +94,21 @@ Edit `config/settings.yaml` to customize:
 - pyyaml
 - requests
 
+## 🔗 Repository
+
+**Official GitHub Repository:**
+https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
+
+SSH Access:
+```bash
+git@github.com:DiyarErol/Apple_Financial_and_Social_Analysis_Dataset.git
+```
+
 ## License
 
 MIT License
 
 ## Author
 
-Data Analysis Project
+**Diyar Erol**  
+GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset

@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 date,actual,predicted,lgbm_pred,xgb_pred,error,percentage_error
 2024-12-05,-0.0822898111175085,0.12586667191100476,-0.20727117672694512,0.44309625,-0.20815648302851325,-252.9553537051068

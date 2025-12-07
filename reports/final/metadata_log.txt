@@ -1,185 +1,186 @@
+GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 AUTHOR METADATA UPDATE LOG
 ======================================================================
-Timestamp: 2025-12-07 13:46:08
+Timestamp: 2025-12-07 14:04:32
 Author: Diyar Erol
 ======================================================================
 
-[2025-12-07 13:46:08] UPDATE     reports\final\cost_sensitivity.csv                 (csv)
-  → Author comment added
-[2025-12-07 13:46:08] UPDATE     reports\final\ensemble_weights.json                (json)
-  → Author field added
-[2025-12-07 13:46:08] SKIP       reports\final\metadata_log.txt                     (text)
-  → Author already present
-[2025-12-07 13:46:08] UPDATE     reports\final\predictions_vs_actual_ensemble.csv   (csv)
-  → Author comment added
-[2025-12-07 13:46:08] UPDATE     reports\final\threshold_best.json                  (json)
-  → Author field added
-[2025-12-07 13:46:08] UPDATE     reports\final\threshold_grid_results.csv           (csv)
-  → Author comment added
-[2025-12-07 13:46:08] UPDATE     reports\figures\apple_closing_price.png            (png)
-  → Author metadata added
-[2025-12-07 13:46:09] UPDATE     reports\figures\cost_vs_return.png                 (png)
-  → Author metadata added
-[2025-12-07 13:46:09] UPDATE     reports\figures\cost_vs_sharpe.png                 (png)
-  → Author metadata added
-[2025-12-07 13:46:10] UPDATE     reports\figures\ensemble_actual_vs_pred.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:10] UPDATE     reports\figures\google_trends_comparison.png       (png)
-  → Author metadata added
-[2025-12-07 13:46:11] UPDATE     reports\figures\threshold_mdd_surface.png          (png)
-  → Author metadata added
-[2025-12-07 13:46:11] UPDATE     reports\figures\threshold_sharpe_surface.png       (png)
-  → Author metadata added
-[2025-12-07 13:46:11] UPDATE     data\processed\apple_analysis_dataset.csv          (csv)
-  → Author comment added
-[2025-12-07 13:46:11] UPDATE     docs\variables.csv                                 (csv)
-  → Author comment added
-[2025-12-07 13:46:11] UPDATE     src\reports\final\actual_vs_predicted.png          (png)
-  → Author metadata added
-[2025-12-07 13:46:11] SKIP       src\reports\final\apple_analysis_report.pdf        (pdf)
+[2025-12-07 14:04:32] UPDATE     reports\final\cost_sensitivity.csv                 (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     reports\final\ensemble_weights.json                (json)
+  → Author and/or GitHub fields added
+[2025-12-07 14:04:32] UPDATE     reports\final\metadata_log.txt                     (text)
+  → Author and/or GitHub headers added
+[2025-12-07 14:04:32] UPDATE     reports\final\predictions_vs_actual_ensemble.csv   (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     reports\final\threshold_best.json                  (json)
+  → Author and/or GitHub fields added
+[2025-12-07 14:04:32] UPDATE     reports\final\threshold_grid_results.csv           (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       reports\figures\apple_closing_price.png            (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\cost_vs_return.png                 (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\cost_vs_sharpe.png                 (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\ensemble_actual_vs_pred.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\google_trends_comparison.png       (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\threshold_mdd_surface.png          (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       reports\figures\threshold_sharpe_surface.png       (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] UPDATE     data\processed\apple_analysis_dataset.csv          (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     docs\variables.csv                                 (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       src\reports\final\actual_vs_predicted.png          (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\final\apple_analysis_report.pdf        (pdf)
   → No PDF library available (install: pip install PyMuPDF)
-[2025-12-07 13:46:11] UPDATE     src\reports\final\backtest_results.csv             (csv)
-  → Author comment added
-[2025-12-07 13:46:11] UPDATE     src\reports\final\correlation_matrix.csv           (csv)
-  → Author comment added
-[2025-12-07 13:46:12] UPDATE     src\reports\final\cv_metric_trend.png              (png)
-  → Author metadata added
-[2025-12-07 13:46:12] UPDATE     src\reports\final\cv_results.csv                   (csv)
-  → Author comment added
-[2025-12-07 13:46:12] UPDATE     src\reports\final\equity_curve_daily.csv           (csv)
-  → Author comment added
-[2025-12-07 13:46:12] UPDATE     src\reports\final\equity_daily.csv                 (csv)
-  → Author comment added
-[2025-12-07 13:46:12] UPDATE     src\reports\final\feature_importance.csv           (csv)
-  → Author comment added
-[2025-12-07 13:46:13] UPDATE     src\reports\final\feature_importance_top30.png     (png)
-  → Author metadata added
-[2025-12-07 13:46:13] UPDATE     src\reports\final\final_report.md                  (text)
-  → Author header added
-[2025-12-07 13:46:13] SKIP       src\reports\final\final_report.pdf                 (pdf)
+[2025-12-07 14:04:32] UPDATE     src\reports\final\backtest_results.csv             (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\correlation_matrix.csv           (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       src\reports\final\cv_metric_trend.png              (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] UPDATE     src\reports\final\cv_results.csv                   (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\equity_curve_daily.csv           (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\equity_daily.csv                 (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\feature_importance.csv           (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       src\reports\final\feature_importance_top30.png     (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] UPDATE     src\reports\final\final_report.md                  (text)
+  → Author and/or GitHub headers added
+[2025-12-07 14:04:32] SKIP       src\reports\final\final_report.pdf                 (pdf)
   → No PDF library available (install: pip install PyMuPDF)
-[2025-12-07 13:46:13] UPDATE     src\reports\final\leakage_report.txt               (text)
-  → Author header added
-[2025-12-07 13:46:13] UPDATE     src\reports\final\MODEL_RESULTS_SUMMARY.md         (text)
-  → Author header added
-[2025-12-07 13:46:13] ERROR      src\reports\final\model_summary.txt                (text)
+[2025-12-07 14:04:32] UPDATE     src\reports\final\leakage_report.txt               (text)
+  → Author and/or GitHub headers added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\MODEL_RESULTS_SUMMARY.md         (text)
+  → Author and/or GitHub headers added
+[2025-12-07 14:04:32] ERROR      src\reports\final\model_summary.txt                (text)
   → 'utf-8' codec can't decode byte 0xb2 in position 480: invalid start byte
-[2025-12-07 13:46:13] UPDATE     src\reports\final\predictions_vs_actual.csv        (csv)
-  → Author comment added
-[2025-12-07 13:46:15] UPDATE     src\reports\final\residuals.png                    (png)
-  → Author metadata added
-[2025-12-07 13:46:16] UPDATE     src\reports\final\roc_curve.png                    (png)
-  → Author metadata added
-[2025-12-07 13:46:16] SKIP       src\reports\final\shap_dependence_top5.pdf         (pdf)
+[2025-12-07 14:04:32] UPDATE     src\reports\final\predictions_vs_actual.csv        (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       src\reports\final\residuals.png                    (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\final\roc_curve.png                    (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\final\shap_dependence_top5.pdf         (pdf)
   → No PDF library available (install: pip install PyMuPDF)
-[2025-12-07 13:46:16] UPDATE     src\reports\final\shap_importance.csv              (csv)
-  → Author comment added
-[2025-12-07 13:46:16] UPDATE     src\reports\final\shap_top5.csv                    (csv)
-  → Author comment added
-[2025-12-07 13:46:16] UPDATE     src\reports\final\test_results.csv                 (csv)
-  → Author comment added
-[2025-12-07 13:46:16] UPDATE     src\reports\final\trades.csv                       (csv)
-  → Author comment added
-[2025-12-07 13:46:16] UPDATE     src\reports\final\walkforward_metrics.csv          (csv)
-  → Author comment added
-[2025-12-07 13:46:16] UPDATE     src\reports\figures\actual_vs_predicted.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:17] UPDATE     src\reports\figures\apple_closing_price.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:19] UPDATE     src\reports\figures\bollinger_example.png          (png)
-  → Author metadata added
-[2025-12-07 13:46:19] UPDATE     src\reports\figures\competitors_relative_perf.png  (png)
-  → Author metadata added
-[2025-12-07 13:46:20] UPDATE     src\reports\figures\correlation_heatmap.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:21] UPDATE     src\reports\figures\correlation_heatmap_engineered.png (png)
-  → Author metadata added
-[2025-12-07 13:46:22] UPDATE     src\reports\figures\drawdown_chart.png             (png)
-  → Author metadata added
-[2025-12-07 13:46:22] UPDATE     src\reports\figures\earnings_impact.png            (png)
-  → Author metadata added
-[2025-12-07 13:46:23] UPDATE     src\reports\figures\equity_curve.png               (png)
-  → Author metadata added
-[2025-12-07 13:46:23] UPDATE     src\reports\figures\event_hype_overlay.png         (png)
-  → Author metadata added
-[2025-12-07 13:46:24] UPDATE     src\reports\figures\feature_distribution.png       (png)
-  → Author metadata added
-[2025-12-07 13:46:24] UPDATE     src\reports\figures\feature_importance.png         (png)
-  → Author metadata added
-[2025-12-07 13:46:24] UPDATE     src\reports\figures\global_macro_overlay.png       (png)
-  → Author metadata added
-[2025-12-07 13:46:25] UPDATE     src\reports\figures\google_trends_comparison.png   (png)
-  → Author metadata added
-[2025-12-07 13:46:25] UPDATE     src\reports\figures\indicators_overview.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:26] UPDATE     src\reports\figures\lag_diagnostics.png            (png)
-  → Author metadata added
-[2025-12-07 13:46:26] UPDATE     src\reports\figures\macbook_vs_price_scatter.png   (png)
-  → Author metadata added
-[2025-12-07 13:46:27] UPDATE     src\reports\figures\macro_overlay.png              (png)
-  → Author metadata added
-[2025-12-07 13:46:28] UPDATE     src\reports\figures\macro_trend_comparison.png     (png)
-  → Author metadata added
-[2025-12-07 13:46:28] UPDATE     src\reports\figures\momentum_regimes.png           (png)
-  → Author metadata added
-[2025-12-07 13:46:29] UPDATE     src\reports\figures\price_distribution.png         (png)
-  → Author metadata added
-[2025-12-07 13:46:29] UPDATE     src\reports\figures\price_vs_iphone_trend.png      (png)
-  → Author metadata added
-[2025-12-07 13:46:29] UPDATE     src\reports\figures\residuals_distribution.png     (png)
-  → Author metadata added
-[2025-12-07 13:46:30] UPDATE     src\reports\figures\seasonality_boxplot.png        (png)
-  → Author metadata added
-[2025-12-07 13:46:33] UPDATE     src\reports\figures\shap_dependence_top5.png       (png)
-  → Author metadata added
-[2025-12-07 13:46:33] UPDATE     src\reports\figures\shap_summary.png               (png)
-  → Author metadata added
-[2025-12-07 13:46:34] UPDATE     src\reports\figures\target_correlation.png         (png)
-  → Author metadata added
-[2025-12-07 13:46:34] UPDATE     src\reports\figures\trend_timeline_10year.png      (png)
-  → Author metadata added
-[2025-12-07 13:46:34] UPDATE     src\reports\figures\walkforward_rmse.png           (png)
-  → Author metadata added
-[2025-12-07 13:46:35] UPDATE     src\reports\figures\weekday_effect.png             (png)
-  → Author metadata added
-[2025-12-07 13:46:35] UPDATE     src\reports\figures\wordcloud.png                  (png)
-  → Author metadata added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_analysis_dataset.csv      (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_feature_dataset.csv       (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_feature_enhanced.csv      (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_feature_plus.csv          (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_feature_plus_time.csv     (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_feature_plus_time_lag.csv (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_macro_dataset.csv         (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_with_earnings.csv         (csv)
-  → Author comment added
-[2025-12-07 13:46:35] UPDATE     src\data\processed\apple_with_events.csv           (csv)
-  → Author comment added
-[2025-12-07 13:46:36] UPDATE     src\data\processed\apple_with_interactions.csv     (csv)
-  → Author comment added
-[2025-12-07 13:46:36] UPDATE     src\data\processed\apple_with_sentiment.csv        (csv)
-  → Author comment added
-[2025-12-07 13:46:36] UPDATE     src\data\processed\apple_with_ti.csv               (csv)
-  → Author comment added
-[2025-12-07 13:46:36] UPDATE     src\data\processed\apple_with_ti_cmp.csv           (csv)
-  → Author comment added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\shap_importance.csv              (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\shap_top5.csv                    (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\test_results.csv                 (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\trades.csv                       (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\reports\final\walkforward_metrics.csv          (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] SKIP       src\reports\figures\actual_vs_predicted.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\apple_closing_price.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\bollinger_example.png          (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\competitors_relative_perf.png  (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\correlation_heatmap.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\correlation_heatmap_engineered.png (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\drawdown_chart.png             (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\earnings_impact.png            (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\equity_curve.png               (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\event_hype_overlay.png         (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\feature_distribution.png       (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\feature_importance.png         (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\global_macro_overlay.png       (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\google_trends_comparison.png   (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\indicators_overview.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\lag_diagnostics.png            (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\macbook_vs_price_scatter.png   (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\macro_overlay.png              (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\macro_trend_comparison.png     (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\momentum_regimes.png           (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\price_distribution.png         (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\price_vs_iphone_trend.png      (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\residuals_distribution.png     (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\seasonality_boxplot.png        (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\shap_dependence_top5.png       (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\shap_summary.png               (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\target_correlation.png         (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\trend_timeline_10year.png      (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\walkforward_rmse.png           (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\weekday_effect.png             (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] SKIP       src\reports\figures\wordcloud.png                  (png)
+  → Author already in metadata
+[2025-12-07 14:04:32] UPDATE     src\data\processed\apple_analysis_dataset.csv      (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\data\processed\apple_feature_dataset.csv       (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\data\processed\apple_feature_enhanced.csv      (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\data\processed\apple_feature_plus.csv          (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:32] UPDATE     src\data\processed\apple_feature_plus_time.csv     (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_feature_plus_time_lag.csv (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_macro_dataset.csv         (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_earnings.csv         (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_events.csv           (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_interactions.csv     (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_sentiment.csv        (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_ti.csv               (csv)
+  → Author and/or GitHub comments added
+[2025-12-07 14:04:33] UPDATE     src\data\processed\apple_with_ti_cmp.csv           (csv)
+  → Author and/or GitHub comments added
 
 ======================================================================
 SUMMARY
 ======================================================================
-Text files updated: 3
+Text files updated: 4
 CSV files updated: 30
 JSON files updated: 2
 PDF files updated: 0
 PKL companions created: 0
-PNG metadata updated: 43
-Files skipped: 4
+PNG metadata updated: 0
+Files skipped: 46
 Total: 82
 ======================================================================

@@ -113,27 +113,38 @@ class MetadataLogger:
 
 
 def add_author_to_text_file(file_path, logger):
-    """Add author header to text files (.md, .txt, etc)."""
+    """Add author header to text files (.md, .txt, .yaml, etc)."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Check if author already exists (case-insensitive)
-        if 'author:' in content.lower():
-            logger.log_entry(file_path, 'SKIP', 'text', 'Author already present')
+        # Check if author and GitHub both already exist
+        has_author = 'author:' in content.lower()
+        has_github = 'github:' in content.lower()
+        
+        if has_author and has_github:
+            logger.log_entry(file_path, 'SKIP', 'text', 'Author and GitHub already present')
             logger.increment_count('skipped')
             return False
         
-        # Add author header at the top
-        author_header = "Author: Diyar Erol\n"
-        new_content = author_header + content
+        # Add missing headers at the top
+        if not has_author or not has_github:
+            author_header = ""
+            if not has_author:
+                author_header += "Author: Diyar Erol\n"
+            if not has_github:
+                author_header += "GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset\n"
+            
+            new_content = author_header + content
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            
+            logger.log_entry(file_path, 'UPDATE', 'text', 'Author and/or GitHub headers added')
+            logger.increment_count('text')
+            return True
         
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-        
-        logger.log_entry(file_path, 'UPDATE', 'text', 'Author header added')
-        logger.increment_count('text')
-        return True
+        return False
         
     except Exception as e:
         logger.log_entry(file_path, 'ERROR', 'text', str(e))
@@ -141,27 +152,38 @@ def add_author_to_text_file(file_path, logger):
 
 
 def add_author_to_csv_file(file_path, logger):
-    """Add author comment to CSV files."""
+    """Add author and GitHub comments to CSV files."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        # Check if author already exists
-        if '# Author:' in content or 'Author:' in content.split('\n')[0]:
-            logger.log_entry(file_path, 'SKIP', 'csv', 'Author already present')
+        # Check if both author and GitHub already exist
+        has_author = '# Author:' in content or 'Author:' in content.split('\n')[0]
+        has_github = '# GitHub:' in content or 'GitHub:' in content.split('\n')[0:3]
+        
+        if has_author and has_github:
+            logger.log_entry(file_path, 'SKIP', 'csv', 'Author and GitHub already present')
             logger.increment_count('skipped')
             return False
         
-        # Add author comment at the top
-        author_comment = "# Author: Diyar Erol\n"
-        new_content = author_comment + content
+        # Add missing comments at the top
+        if not has_author or not has_github:
+            author_comment = ""
+            if not has_author:
+                author_comment += "# Author: Diyar Erol\n"
+            if not has_github:
+                author_comment += "# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset\n"
+            
+            new_content = author_comment + content
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            
+            logger.log_entry(file_path, 'UPDATE', 'csv', 'Author and/or GitHub comments added')
+            logger.increment_count('csv')
+            return True
         
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(new_content)
-        
-        logger.log_entry(file_path, 'UPDATE', 'csv', 'Author comment added')
-        logger.increment_count('csv')
-        return True
+        return False
         
     except Exception as e:
         logger.log_entry(file_path, 'ERROR', 'csv', str(e))
@@ -169,27 +191,37 @@ def add_author_to_csv_file(file_path, logger):
 
 
 def add_author_to_json_file(file_path, logger):
-    """Add author field to JSON files."""
+    """Add author and GitHub fields to JSON files."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        # Check if author already exists
-        if 'author' in data or 'Author' in data:
-            logger.log_entry(file_path, 'SKIP', 'json', 'Author already present')
+        # Check if both author and GitHub already exist
+        has_author = 'author' in data or 'Author' in data
+        has_github = 'github' in data or 'GitHub' in data
+        
+        if has_author and has_github:
+            logger.log_entry(file_path, 'SKIP', 'json', 'Author and GitHub already present')
             logger.increment_count('skipped')
             return False
         
-        # Add author field
-        data['author'] = 'Diyar Erol'
-        data['metadata_updated'] = datetime.now().isoformat()
+        # Add missing fields
+        if not has_author or not has_github:
+            if not has_author:
+                data['author'] = 'Diyar Erol'
+            if not has_github:
+                data['github'] = 'https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset'
+            
+            data['metadata_updated'] = datetime.now().isoformat()
+            
+            with open(file_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            
+            logger.log_entry(file_path, 'UPDATE', 'json', 'Author and/or GitHub fields added')
+            logger.increment_count('json')
+            return True
         
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        
-        logger.log_entry(file_path, 'UPDATE', 'json', 'Author field added')
-        logger.increment_count('json')
-        return True
+        return False
         
     except Exception as e:
         logger.log_entry(file_path, 'ERROR', 'json', str(e))
@@ -197,7 +229,7 @@ def add_author_to_json_file(file_path, logger):
 
 
 def add_author_to_pdf(file_path, logger):
-    """Add author metadata to PDF files using PyPDF2 or PyMuPDF."""
+    """Add comprehensive author metadata to PDF files using PyMuPDF or PyPDF2."""
     try:
         success = False
         
@@ -214,18 +246,20 @@ def add_author_to_pdf(file_path, logger):
                     pdf.close()
                     return False
                 
-                # Set author metadata
+                # Set comprehensive author metadata
                 pdf.set_metadata({
                     'author': 'Diyar Erol',
                     'title': metadata.get('title', file_path.stem) if metadata else file_path.stem,
-                    'subject': metadata.get('subject', 'Analysis Report') if metadata else 'Analysis Report',
+                    'subject': 'Apple Financial and Social Analysis Dataset (2015–2025)',
+                    'keywords': 'Finance, Apple, Dataset, Diyar Erol, Machine Learning',
+                    'producer': 'Apple Dataset Pipeline by Diyar Erol',
                     'creator': 'add_author_metadata.py'
                 })
                 
                 pdf.save(file_path)
                 pdf.close()
                 
-                logger.log_entry(file_path, 'UPDATE', 'pdf', 'Author metadata added (PyMuPDF)')
+                logger.log_entry(file_path, 'UPDATE', 'pdf', 'Comprehensive author metadata added (PyMuPDF)')
                 logger.increment_count('pdf')
                 success = True
                 
@@ -252,18 +286,20 @@ def add_author_to_pdf(file_path, logger):
                     for page in pdf_reader.pages:
                         reader.add_page(page)
                 
-                # Add author metadata
+                # Add comprehensive author metadata
                 reader.add_metadata({
                     '/Author': 'Diyar Erol',
-                    '/Creator': 'add_author_metadata.py',
-                    '/Subject': 'Analysis Report'
+                    '/Subject': 'Apple Financial and Social Analysis Dataset (2015–2025)',
+                    '/Keywords': 'Finance, Apple, Dataset, Diyar Erol, Machine Learning',
+                    '/Producer': 'Apple Dataset Pipeline by Diyar Erol',
+                    '/Creator': 'add_author_metadata.py'
                 })
                 
                 # Write updated PDF
                 with open(file_path, 'wb') as f:
                     reader.write(f)
                 
-                logger.log_entry(file_path, 'UPDATE', 'pdf', 'Author metadata added (PyPDF2)')
+                logger.log_entry(file_path, 'UPDATE', 'pdf', 'Comprehensive author metadata added (PyPDF2)')
                 logger.increment_count('pdf')
                 success = True
                 
@@ -284,7 +320,7 @@ def add_author_to_pdf(file_path, logger):
 
 
 def add_metadata_to_pkl(file_path, logger):
-    """Create metadata companion JSON for .pkl files."""
+    """Create metadata companion JSON for .pkl files with author and GitHub info."""
     try:
         # Check if companion already exists
         meta_path = file_path.with_suffix('.meta.json')
@@ -298,9 +334,10 @@ def add_metadata_to_pkl(file_path, logger):
                 logger.increment_count('skipped')
                 return False
         
-        # Create metadata
+        # Create metadata with author and GitHub info
         metadata = {
             'author': 'Diyar Erol',
+            'github': 'https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset',
             'created': datetime.now().isoformat(),
             'source_file': file_path.name,
             'description': f'Metadata for {file_path.name}',

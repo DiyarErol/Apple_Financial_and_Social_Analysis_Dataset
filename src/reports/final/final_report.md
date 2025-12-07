@@ -1,3 +1,4 @@
+GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 Author: Diyar Erol
 # Apple Stock Prediction Model - Final Report
 

@@ -1,3 +1,4 @@
+GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 Author: Diyar Erol
 # Advanced Time Series Modeling Results Summary
 ## Apple Financial and Social Analysis Dataset

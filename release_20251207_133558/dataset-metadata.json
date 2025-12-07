@@ -1,7 +1,11 @@
 ﻿{
-  "title": "Apple Stock Prediction",
+  "title": "Apple Stock Prediction - Feature-Engineered Financial Dataset",
   "id": "diyarerol21/apple-stock-prediction",
+  "author": "Diyar Erol",
+  "github": "https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset",
   "licenses": [{"name": "CC-BY-SA-4.0"}],
-  "subtitle": "80+ features for AAPL",
-  "description": "Financial dataset for Apple stock prediction with 2696 samples and 80+ engineered features"
+  "subtitle": "80+ features for AAPL prediction (2015–2025)",
+  "description": "Comprehensive financial dataset for Apple stock prediction with 2,696 samples and 80+ engineered features including technical indicators, competitor data, macroeconomic variables, and sentiment analysis.",
+  "keywords": ["finance", "stocks", "machine learning", "trading", "time series", "apple", "aapl", "dataset"],
+  "created": "2025-12-07T14:04:32.798237Z"
 }

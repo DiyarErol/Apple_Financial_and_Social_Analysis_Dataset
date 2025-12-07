@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 tx_cost,total_return,annualized_return,volatility_annual,sharpe_ratio,sortino_ratio,max_drawdown,win_rate,trades_count
 0.050000,2.159888,0.998489,19.790502,0.152140,0.145213,-27.923888,24.584104,319

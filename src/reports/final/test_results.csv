@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 target,model,rmse,mae,r2,roc_auc,f1,accuracy
 next_day_close,lightgbm,11.972341869530519,8.513645983213404,0.7794366088153973,,,

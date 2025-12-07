@@ -1,3 +1,4 @@
+# GitHub: https://github.com/DiyarErol/Apple_Financial_and_Social_Analysis_Dataset
 # Author: Diyar Erol
 rank,feature,mean_abs_shap
 1,close_AMZN,0.15955152065493575
