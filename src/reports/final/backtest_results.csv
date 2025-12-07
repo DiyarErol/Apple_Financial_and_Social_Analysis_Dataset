@@ -1,0 +1,15 @@
+# Author: Diyar Erol
+metric,value
+Initial Capital,"$100,000.00"
+Final Equity,"$51,729.69"
+Total Return,-48.27%
+Annualized Return,-26.40%
+Volatility (Annual),19.84%
+Sharpe Ratio,-1.3305
+Sortino Ratio,-1.2374
+Max Drawdown,-53.83%
+Win Rate,49.20%
+Avg Daily Gain,1.1771%
+Avg Daily Loss,-1.2140%
+Total Trades,310
+Trading Days,542

@@ -1,0 +1,56 @@
+column,description,unit,source,transformation
+date,Trading date,Date,yfinance,None
+close,Closing price of Apple Inc. stock,USD,yfinance AAPL,None
+high,Highest price during trading day,USD,yfinance AAPL,None
+low,Lowest price during trading day,USD,yfinance AAPL,None
+open,Opening price at market open,USD,yfinance AAPL,None
+volume,Number of shares traded,Shares,yfinance AAPL,None
+apple iphone,Google Trends search interest for 'apple iphone',Index (0-100),Google Trends,Weekly aggregation
+macbook,Google Trends search interest for 'macbook',Index (0-100),Google Trends,Weekly aggregation
+fed_rate,Federal Funds Effective Rate,Percentage,FRED DFF,Daily forward-fill from monthly
+us_cpi,Consumer Price Index for All Urban Consumers,Index,FRED CPIAUCSL,Daily forward-fill from monthly
+usd_index,US Dollar Index,Index,FRED DTWEXBGS,Daily forward-fill
+macro_sentiment_index,Composite macro sentiment indicator,Index,Derived,"(USD/max) - (Fed/max) - (CPI/max)"
+rsi_14,Relative Strength Index (14 periods),Index (0-100),Calculated,Momentum oscillator based on price changes
+macd,Moving Average Convergence Divergence,Value,Calculated,"EMA(12) - EMA(26)"
+macd_signal,MACD Signal Line,Value,Calculated,EMA(9) of MACD
+macd_hist,MACD Histogram,Value,Calculated,MACD - MACD Signal
+bb_mid_20,Bollinger Bands Middle (20-day SMA),USD,Calculated,20-period Simple Moving Average
+bb_upper_20,Bollinger Bands Upper Band,USD,Calculated,"SMA(20) + 2 * StdDev(20)"
+bb_lower_20,Bollinger Bands Lower Band,USD,Calculated,"SMA(20) - 2 * StdDev(20)"
+atr_14,Average True Range (14 periods),USD,Calculated,Rolling average of True Range
+obv,On-Balance Volume,Volume,Calculated,Cumulative volume based on price direction
+vwap_20,Volume Weighted Average Price (20 days),USD,Calculated,Sum(Price * Volume) / Sum(Volume)
+close_AAPL,Apple Inc. closing price (reference),USD,yfinance AAPL,None
+close_AMZN,Amazon.com Inc. closing price,USD,yfinance AMZN,None
+close_GOOGL,Alphabet Inc. (Google) closing price,USD,yfinance GOOGL,None
+close_MSFT,Microsoft Corporation closing price,USD,yfinance MSFT,None
+close_XLK,Technology Select Sector SPDR Fund,USD,yfinance XLK,None
+close_IXIC,NASDAQ Composite Index,Index,yfinance ^IXIC,None
+rel_AAPL_MSFT,Relative performance: AAPL vs MSFT,Ratio,Calculated,close_AAPL / close_MSFT
+rel_AAPL_IXIC,Relative performance: AAPL vs NASDAQ,Ratio,Calculated,close_AAPL / close_IXIC
+vix,CBOE Volatility Index (VIX),Index,yfinance ^VIX,None
+gold,Gold Futures Front Month,USD per troy oz,yfinance GC=F,None
+oil,Crude Oil WTI Futures,USD per barrel,yfinance CL=F,None
+tnote_10y,10-Year Treasury Constant Maturity Rate,Percentage,FRED DGS10,Daily forward-fill from business days
+unemployment,Unemployment Rate,Percentage,FRED UNRATE,Daily forward-fill from monthly
+dow,Day of week,Integer (0-6),Calculated,Extracted from date (0=Monday)
+month,Month of year,Integer (1-12),Calculated,Extracted from date
+quarter,Quarter of year,Integer (1-4),Calculated,Calculated from month
+year,Year,Integer,Calculated,Extracted from date
+is_month_end,End of month flag,Binary (0/1),Calculated,1 if last trading day of month
+is_quarter_end,End of quarter flag,Binary (0/1),Calculated,1 if last trading day of quarter
+days_to_earnings,Days until next earnings announcement,Integer,Placeholder,To be populated with earnings calendar
+daily_return,Daily percentage return,Percentage,Calculated,"(close_t - close_t-1) / close_t-1 * 100"
+close_lag_1,Previous day's closing price,USD,Calculated,close.shift(1)
+close_lag_2,Closing price 2 days ago,USD,Calculated,close.shift(2)
+close_lag_7,Closing price 7 days ago (1 week),USD,Calculated,close.shift(7)
+volume_lag_1,Previous day's trading volume,Shares,Calculated,volume.shift(1)
+return_lag_1,Previous day's return,Percentage,Calculated,daily_return.shift(1)
+return_lag_7,Return 7 days ago (1 week),Percentage,Calculated,daily_return.shift(7)
+rolling_max_30d,30-day rolling maximum close price,USD,Calculated,close.rolling(30).max()
+rolling_min_30d,30-day rolling minimum close price,USD,Calculated,close.rolling(30).min()
+next_day_close,Tomorrow's closing price (target),USD,Calculated,close.shift(-1)
+next_day_return,Tomorrow's percentage return (target),Percentage,Calculated,"(next_day_close - close) / close * 100"
+next_week_close,Closing price 5 trading days ahead (target),USD,Calculated,close.shift(-5)
+direction,Binary direction indicator (target),Binary (0/1),Calculated,"1 if next_day_return > 0, else 0"

@@ -1,0 +1,7 @@
+# Author: Diyar Erol
+rank,feature,mean_abs_shap
+1,close_AMZN,0.15955152065493575
+2,bb_upper_20,0.10091051621649635
+3,daily_return,0.10067594475216234
+4,rsi_divergence,0.09568412690497685
+5,macd,0.09165815512406195

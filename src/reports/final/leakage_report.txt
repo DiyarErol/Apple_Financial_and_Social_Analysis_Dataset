@@ -1,0 +1,89 @@
+Author: Diyar Erol
+================================================================================
+DATA LEAKAGE VALIDATION REPORT
+Apple Financial and Social Analysis Dataset
+================================================================================
+
+Generated: 2025-12-07 10:37:17
+Dataset: 2,696 records, 62 columns
+Date range: 2015-03-13 to 2025-11-28
+
+================================================================================
+OVERALL VALIDATION STATUS
+================================================================================
+
+Overall Status: PASS
+Total Checks: 11
+Warnings: 10
+Failures: 0
+
+================================================================================
+LAG AND ROLLING FEATURES
+================================================================================
+
+Status: PASS
+
+Passed Checks (6):
+    ✓ close_lag_1: Properly shifted (corr=1.000000)
+    ✓ close_lag_2: Properly shifted (corr=1.000000)
+    ✓ close_lag_7: Properly shifted (corr=1.000000)
+    ✓ volume_lag_1: Properly shifted (corr=1.000000)
+    ✓ return_lag_1: Properly shifted (corr=1.000000)
+    ✓ return_lag_7: Properly shifted (corr=1.000000)
+
+Warnings (8):
+    ⚠ rolling_max_30d corr with future close[t+1]: 0.995
+    ⚠ rolling_max_30d corr with future close[t+2]: 0.995
+    ⚠ rolling_max_30d corr with future close[t+5]: 0.994
+    ⚠ rolling_min_30d corr with future close[t+1]: 0.995
+    ⚠ rolling_min_30d corr with future close[t+2]: 0.994
+    ⚠ rolling_min_30d corr with future close[t+5]: 0.993
+    ⚠ rolling_max_30d: Only 0 leading NaNs (expected ~29)
+    ⚠ rolling_min_30d: Only 0 leading NaNs (expected ~29)
+
+================================================================================
+TARGET VARIABLES
+================================================================================
+
+Status: PASS
+
+================================================================================
+FUTURE CORRELATIONS
+================================================================================
+
+Status: PASS
+
+================================================================================
+TECHNICAL INDICATORS
+================================================================================
+
+Status: PASS
+
+Passed Checks (1):
+    ✓ OBV appears cumulative (0 large decreases)
+
+Warnings (2):
+    ⚠ VWAP has high correlation with close[t+5]: 0.996
+    ⚠ OBV has very high correlation with close[t+5]: 0.902
+
+================================================================================
+TEMPORAL CONSISTENCY
+================================================================================
+
+Status: PASS
+
+Passed Checks (4):
+    ✓ dow: Matches date.dayofweek (100.00%)
+    ✓ month: Matches date.month (100.00%)
+    ✓ quarter: Matches date.quarter (100.00%)
+    ✓ year: Matches date.year (100.00%)
+
+================================================================================
+SUMMARY AND RECOMMENDATIONS
+================================================================================
+
+✓ No data leakage detected. Dataset is safe to use for modeling.
+
+================================================================================
+END OF REPORT
+================================================================================

@@ -1,0 +1,391 @@
+# Data Sources Configuration
+# Apple Financial and Social Analysis Dataset
+# Last Updated: 2025-12-07
+
+sources:
+  # Stock Market Data - yfinance
+  AAPL:
+    source: "yfinance"
+    description: "Apple Inc. (NASDAQ:AAPL) OHLCV data"
+    endpoint: "yfinance.download('AAPL', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["open", "high", "low", "close", "volume"]
+    
+  MSFT:
+    source: "yfinance"
+    description: "Microsoft Corporation (NASDAQ:MSFT) closing prices"
+    endpoint: "yfinance.download('MSFT', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    
+  GOOGL:
+    source: "yfinance"
+    description: "Alphabet Inc. (NASDAQ:GOOGL) closing prices"
+    endpoint: "yfinance.download('GOOGL', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    
+  AMZN:
+    source: "yfinance"
+    description: "Amazon.com Inc. (NASDAQ:AMZN) closing prices"
+    endpoint: "yfinance.download('AMZN', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    
+  ^IXIC:
+    source: "yfinance"
+    description: "NASDAQ Composite Index"
+    endpoint: "yfinance.download('^IXIC', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    
+  XLK:
+    source: "yfinance"
+    description: "Technology Select Sector SPDR Fund"
+    endpoint: "yfinance.download('XLK', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+
+  # Market Indicators - yfinance
+  ^VIX:
+    source: "yfinance"
+    description: "CBOE Volatility Index (VIX)"
+    endpoint: "yfinance.download('^VIX', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    notes: "Market fear gauge - measures expected volatility"
+    
+  GC=F:
+    source: "yfinance"
+    description: "Gold Futures Front Month (COMEX)"
+    endpoint: "yfinance.download('GC=F', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    unit: "USD per troy ounce"
+    
+  CL=F:
+    source: "yfinance"
+    description: "Crude Oil WTI Futures (NYMEX)"
+    endpoint: "yfinance.download('CL=F', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    unit: "USD per barrel"
+
+  # Macroeconomic Data - FRED (Federal Reserve Economic Data)
+  DFF:
+    source: "FRED"
+    description: "Federal Funds Effective Rate"
+    endpoint: "pandas_datareader.data.DataReader('DFF', 'fred', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily (business days)"
+    last_accessed_at: "2025-12-07"
+    columns: ["fed_rate"]
+    unit: "Percentage"
+    transformation: "Forward-fill to match trading calendar"
+    
+  CPIAUCSL:
+    source: "FRED"
+    description: "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average"
+    endpoint: "pandas_datareader.data.DataReader('CPIAUCSL', 'fred', start='2015-01-01', end='2025-12-07')"
+    frequency: "Monthly"
+    last_accessed_at: "2025-12-07"
+    columns: ["us_cpi"]
+    unit: "Index (1982-1984=100)"
+    transformation: "Resampled to daily via forward-fill"
+    
+  DTWEXBGS:
+    source: "FRED"
+    description: "Nominal Broad U.S. Dollar Index"
+    endpoint: "pandas_datareader.data.DataReader('DTWEXBGS', 'fred', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily (business days)"
+    last_accessed_at: "2025-12-07"
+    columns: ["usd_index"]
+    unit: "Index (Jan 2006 = 100)"
+    transformation: "Forward-fill to match trading calendar"
+    
+  DGS10:
+    source: "FRED"
+    description: "10-Year Treasury Constant Maturity Rate"
+    endpoint: "pandas_datareader.data.DataReader('DGS10', 'fred', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily (business days)"
+    last_accessed_at: "2025-12-07"
+    columns: ["tnote_10y"]
+    unit: "Percentage"
+    transformation: "Forward-fill to match trading calendar"
+    notes: "Risk-free rate benchmark"
+    
+  UNRATE:
+    source: "FRED"
+    description: "Unemployment Rate"
+    endpoint: "pandas_datareader.data.DataReader('UNRATE', 'fred', start='2015-01-01', end='2025-12-07')"
+    frequency: "Monthly"
+    last_accessed_at: "2025-12-07"
+    columns: ["unemployment"]
+    unit: "Percentage"
+    transformation: "Resampled to daily via forward-fill"
+    notes: "Seasonally adjusted"
+
+  # Alternative Treasury Source (backup)
+  ^TNX:
+    source: "yfinance"
+    description: "CBOE 10-Year Treasury Yield Index"
+    endpoint: "yfinance.download('^TNX', start='2015-01-01', end='2025-12-07')"
+    frequency: "Daily"
+    last_accessed_at: "2025-12-07"
+    columns: ["close"]
+    unit: "Percentage"
+    notes: "Alternative to FRED DGS10; multiply by 0.01 for decimal representation"
+
+  # Social Media & Search Trends
+  google_trends:
+    source: "Google Trends API"
+    description: "Search interest over time for Apple products"
+    endpoint: "pytrends.build_payload(['apple iphone', 'macbook'], timeframe='2015-01-01 2025-12-07')"
+    frequency: "Weekly (aggregated to daily)"
+    last_accessed_at: "2025-12-07"
+    columns: ["apple iphone", "macbook"]
+    unit: "Index (0-100, normalized)"
+    notes: "Represents relative search interest; subject to API rate limits"
+
+# Technical Indicators (Calculated)
+technical_indicators:
+  rsi_14:
+    description: "Relative Strength Index (14 periods)"
+    calculation: "RSI = 100 - (100 / (1 + RS)), where RS = avg_gain / avg_loss"
+    dependencies: ["close"]
+    
+  macd:
+    description: "Moving Average Convergence Divergence"
+    calculation: "MACD = EMA(12) - EMA(26)"
+    dependencies: ["close"]
+    
+  macd_signal:
+    description: "MACD Signal Line"
+    calculation: "Signal = EMA(9) of MACD"
+    dependencies: ["macd"]
+    
+  macd_hist:
+    description: "MACD Histogram"
+    calculation: "Histogram = MACD - Signal"
+    dependencies: ["macd", "macd_signal"]
+    
+  bollinger_bands:
+    description: "Bollinger Bands (20-period, 2 std dev)"
+    calculation: "Middle = SMA(20), Upper = Middle + 2*StdDev(20), Lower = Middle - 2*StdDev(20)"
+    dependencies: ["close"]
+    columns: ["bb_mid_20", "bb_upper_20", "bb_lower_20"]
+    
+  atr_14:
+    description: "Average True Range (14 periods)"
+    calculation: "ATR = Rolling Average of max(high-low, abs(high-prev_close), abs(low-prev_close))"
+    dependencies: ["high", "low", "close"]
+    
+  obv:
+    description: "On-Balance Volume"
+    calculation: "OBV = Cumulative sum of signed volume based on price direction"
+    dependencies: ["close", "volume"]
+    
+  vwap_20:
+    description: "Volume Weighted Average Price (20 days)"
+    calculation: "VWAP = Sum(Price * Volume) / Sum(Volume) over 20 days"
+    dependencies: ["close", "volume"]
+
+# Derived Features
+derived_features:
+  macro_sentiment_index:
+    description: "Composite macroeconomic sentiment indicator"
+    calculation: "(usd_index/max) - (fed_rate/max) - (us_cpi/max)"
+    dependencies: ["usd_index", "fed_rate", "us_cpi"]
+    
+  rel_AAPL_MSFT:
+    description: "Relative performance of Apple vs Microsoft"
+    calculation: "close_AAPL / close_MSFT"
+    dependencies: ["close_AAPL", "close_MSFT"]
+    
+  rel_AAPL_IXIC:
+    description: "Relative performance of Apple vs NASDAQ"
+    calculation: "close_AAPL / close_IXIC"
+    dependencies: ["close_AAPL", "close_IXIC"]
+    
+  daily_return:
+    description: "Daily percentage return"
+    calculation: "(close_t - close_t-1) / close_t-1 * 100"
+    dependencies: ["close"]
+
+# Lag Features
+lag_features:
+  close_lag_1:
+    description: "Previous day's closing price"
+    calculation: "close.shift(1)"
+    
+  close_lag_2:
+    description: "Closing price 2 days ago"
+    calculation: "close.shift(2)"
+    
+  close_lag_7:
+    description: "Closing price 7 days ago (1 week)"
+    calculation: "close.shift(7)"
+    
+  volume_lag_1:
+    description: "Previous day's trading volume"
+    calculation: "volume.shift(1)"
+    
+  return_lag_1:
+    description: "Previous day's return"
+    calculation: "daily_return.shift(1)"
+    
+  return_lag_7:
+    description: "Return 7 days ago (1 week)"
+    calculation: "daily_return.shift(7)"
+    
+  rolling_max_30d:
+    description: "30-day rolling maximum close price"
+    calculation: "close.rolling(30).max()"
+    
+  rolling_min_30d:
+    description: "30-day rolling minimum close price"
+    calculation: "close.rolling(30).min()"
+
+# Temporal Features
+temporal_features:
+  dow:
+    description: "Day of week"
+    calculation: "date.dt.dayofweek"
+    range: "0-6 (0=Monday, 6=Sunday)"
+    
+  month:
+    description: "Month of year"
+    calculation: "date.dt.month"
+    range: "1-12"
+    
+  quarter:
+    description: "Quarter of year"
+    calculation: "date.dt.quarter"
+    range: "1-4"
+    
+  year:
+    description: "Year"
+    calculation: "date.dt.year"
+    
+  is_month_end:
+    description: "End of month flag"
+    calculation: "date.dt.is_month_end"
+    values: "0 or 1"
+    
+  is_quarter_end:
+    description: "End of quarter flag"
+    calculation: "date.dt.is_quarter_end"
+    values: "0 or 1"
+    
+  days_to_earnings:
+    description: "Days until next earnings announcement"
+    calculation: "To be populated from earnings calendar"
+    status: "Placeholder (currently NaN)"
+
+# Target Variables
+targets:
+  next_day_close:
+    description: "Tomorrow's closing price"
+    calculation: "close.shift(-1)"
+    task_type: "Regression"
+    
+  next_day_return:
+    description: "Tomorrow's percentage return"
+    calculation: "(next_day_close - close) / close * 100"
+    task_type: "Regression"
+    
+  next_week_close:
+    description: "Closing price 5 trading days ahead"
+    calculation: "close.shift(-5)"
+    task_type: "Regression"
+    
+  direction:
+    description: "Binary direction indicator"
+    calculation: "1 if next_day_return > 0, else 0"
+    task_type: "Classification"
+    classes: ["Down (0)", "Up (1)"]
+
+# Data Pipeline Scripts
+pipeline:
+  data_loader.py:
+    description: "Downloads AAPL stock data and Google Trends"
+    outputs: ["data/raw/apple_stock.csv", "data/raw/google_trends.csv"]
+    
+  macro_loader.py:
+    description: "Fetches FRED macroeconomic indicators"
+    outputs: ["data/processed/apple_with_macro.csv"]
+    
+  competitors_loader.py:
+    description: "Downloads competitor stock data"
+    outputs: ["data/processed/apple_with_ti_cmp.csv"]
+    
+  macro_extend.py:
+    description: "Adds VIX, Gold, Oil, Treasury, Unemployment"
+    outputs: ["data/processed/apple_feature_plus.csv"]
+    
+  technical_indicators.py:
+    description: "Calculates technical indicators"
+    outputs: ["data/processed/apple_with_ti.csv"]
+    
+  temporal_features.py:
+    description: "Adds temporal features"
+    outputs: ["data/processed/apple_feature_plus_time.csv"]
+    
+  lag_features.py:
+    description: "Creates lag and rolling features"
+    outputs: ["data/processed/apple_feature_plus_time_lag.csv"]
+    
+  modeling.py:
+    description: "Time series ML modeling with multiple targets"
+    outputs: ["models/best_model_*.pkl", "reports/final/cv_results.csv", "reports/final/test_results.csv"]
+
+# Data Quality Notes
+data_quality:
+  missing_values:
+    days_to_earnings: "Placeholder column, all NaN - to be populated"
+    vix: "Occasional missing values forward-filled"
+    gold: "Occasional missing values forward-filled"
+    oil: "Occasional missing values forward-filled"
+    
+  transformations:
+    fred_data: "Monthly data resampled to daily via forward-fill"
+    google_trends: "Weekly data aggregated to daily"
+    
+  outlier_handling:
+    status: "No outlier removal implemented"
+    notes: "Consider implementing for production deployment"
+    
+  date_range:
+    start: "2015-01-30 (first complete date with all features)"
+    end: "2025-11-28 (last available date)"
+    samples: "2,696 observations after lag feature cleaning"
+
+# API Rate Limits & Best Practices
+api_limits:
+  yfinance:
+    limit: "2,000 requests per hour"
+    recommendation: "Implement caching and batch downloads"
+    
+  google_trends:
+    limit: "Unofficial API, subject to throttling"
+    recommendation: "Add retry logic with exponential backoff"
+    
+  fred:
+    limit: "120 requests per minute"
+    recommendation: "Use pandas_datareader for efficient bulk downloads"
+
+# Version Control
+metadata:
+  created_at: "2025-12-07"
+  last_updated: "2025-12-07"
+  version: "1.0.0"
+  maintainer: "Data Science Team"
+  project: "Apple Financial and Social Analysis Dataset"

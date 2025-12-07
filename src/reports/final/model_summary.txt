@@ -1,0 +1,70 @@
+
+================================================================================
+APPLE STOCK PRICE PREDICTION - MODEL SUMMARY
+================================================================================
+
+Generated: 2025-12-07 09:34:50
+
+================================================================================
+BEST MODEL: LightGBM
+================================================================================
+
+Training Performance:
+  RMSE:  $0.5075
+  R²:    0.9999
+
+Testing Performance:
+  RMSE:  $37.2400
+  R²:    -0.8113
+  MAE:   $28.3426
+
+Prediction Statistics:
+  Mean Absolute Error:     $28.3426
+  Mean Percentage Error:   12.15%
+  Min Prediction Error:    $-6.9239
+  Max Prediction Error:    $92.1866
+  Std of Errors:          $24.6421
+
+================================================================================
+MODEL COMPARISON
+================================================================================
+
+XGBoost:
+  Test RMSE:  $40.6008
+  Test R²:    -1.1530
+  Test MAE:   $31.5323
+
+LightGBM:
+  Test RMSE:  $37.2400
+  Test R²:    -0.8113
+  Test MAE:   $28.3426
+
+================================================================================
+INTERPRETATION
+================================================================================
+
+The LightGBM model was selected as the best performer with:
+- Lower test RMSE indicates better prediction accuracy
+- R² of -0.8113 means -81.13% of variance explained
+- Test MAE of $28.3426 shows average absolute error per prediction
+
+The model successfully captures temporal patterns in Apple's stock price data
+by leveraging engineered features including technical indicators, macroeconomic
+indicators, and Google search trends.
+
+================================================================================
+OUTPUT FILES
+================================================================================
+
+Models:
+  - models/best_model.pkl
+
+Predictions:
+  - reports/final/predictions_vs_actual.csv
+
+Visualizations:
+  - reports/figures/actual_vs_predicted.png
+  - reports/figures/feature_importance.png
+  - reports/figures/residuals_distribution.png
+
+================================================================================

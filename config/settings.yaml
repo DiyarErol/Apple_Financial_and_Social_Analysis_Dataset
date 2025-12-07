@@ -1,0 +1,26 @@
+# Configuration settings for Apple Financial and Social Analysis
+
+project:
+  name: Apple Financial and Social Analysis
+  version: 1.0.0
+  description: Analysis of Apple's financial metrics and social media sentiment
+
+data:
+  raw_data_path: data/raw
+  processed_data_path: data/processed
+  external_data_path: data/external
+
+output:
+  figures_path: reports/figures
+  reports_path: reports/final
+
+analysis:
+  date_column: date
+  price_column: close_price
+  volume_column: volume
+  sentiment_column: sentiment
+
+visualization:
+  figure_format: png
+  dpi: 300
+  style: seaborn
